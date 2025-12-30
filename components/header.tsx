@@ -1,45 +1,47 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { useLanguage } from "@/lib/language-context"
-import { LanguageSwitcher } from "./language-switcher"
-import { Menu, X, Phone } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import { useLanguage } from "@/lib/language-context";
+import { LanguageSwitcher } from "./language-switcher";
+import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Header() {
-  const { t } = useLanguage()
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const { t } = useLanguage();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { href: "#rooms", label: t("rooms") },
     { href: "#amenities", label: t("amenities") },
     { href: "#location", label: t("directions") },
-  ]
+  ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#2d2d2f] ${isScrolled ? "shadow-lg" : ""}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#2d2d2f] ${
+        isScrolled ? "shadow-lg" : ""
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/images/logo-boardinghouse-work-sleep-1-1-e1766177408442-768x295.png"
+              src="/images/Logo-boardinghouse-work-sleep-1-1-1-e1766177408442.png"
               alt="Work & Sleep Boardinghouse"
-              width={180}
-              height={69}
-              className="h-12 w-auto"
+              width={40}
+              height={40}
+              className="h-[35px] w-auto"
               priority
             />
           </Link>
@@ -86,7 +88,11 @@ export function Header() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -120,5 +126,5 @@ export function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }
