@@ -37,8 +37,32 @@ const carouselImages = [
 export function AmenitiesSection() {
   const { t } = useLanguage();
   const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const scrollPositionRef = useRef(0);
+
+  // Intersection Observer to detect when section is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -48,7 +72,8 @@ export function AmenitiesSection() {
     const scrollSpeed = 0.5;
 
     const animate = () => {
-      if (!isPaused && scrollContainer) {
+      // Only animate if visible and not paused
+      if (isVisible && !isPaused && scrollContainer) {
         scrollPositionRef.current += scrollSpeed;
         // Reset when we've scrolled through half (since we duplicate images)
         if (scrollPositionRef.current >= scrollContainer.scrollWidth / 2) {
@@ -62,7 +87,7 @@ export function AmenitiesSection() {
     animationId = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationId);
-  }, [isPaused]);
+  }, [isPaused, isVisible]);
 
   const handleMouseEnter = useCallback(() => {
     setIsPaused(true);
@@ -76,7 +101,11 @@ export function AmenitiesSection() {
   const duplicatedImages = [...carouselImages, ...carouselImages];
 
   return (
-    <section id="amenities" className="pb-24 bg-gray-100 scroll-mt-12">
+    <section 
+      id="amenities" 
+      ref={sectionRef}
+      className="pb-24 bg-gray-100 scroll-mt-12"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 pt-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
