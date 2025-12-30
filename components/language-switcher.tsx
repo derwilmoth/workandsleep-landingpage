@@ -42,7 +42,7 @@ export function LanguageSwitcher() {
                   setLanguage(lang.code as Language);
                   setIsOpen(false);
                 }}
-                className={`cursor-pointer w-full px-4 py-2.5 text-center text-sm flex items-center gap-3 hover:bg-white/10 transition-colors ${
+                className={`cursor-pointer w-full px-4 py-2.5 text-sm flex items-center justify-center hover:bg-white/10 transition-colors ${
                   language === lang.code
                     ? "bg-[#e91e7d]/20 text-[#e91e7d] font-medium"
                     : "text-gray-300"
