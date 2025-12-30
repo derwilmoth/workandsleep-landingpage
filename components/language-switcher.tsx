@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useLanguage } from "@/lib/language-context"
-import { languages, type Language } from "@/lib/i18n"
-import { ChevronDown, Globe } from "lucide-react"
+import { useState } from "react";
+import { useLanguage } from "@/lib/language-context";
+import { languages, type Language } from "@/lib/i18n";
+import { ChevronDown, Globe } from "lucide-react";
 
 export function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage()
-  const [isOpen, setIsOpen] = useState(false)
+  const { language, setLanguage } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const currentLang = languages.find((l) => l.code === language)
+  const currentLang = languages.find((l) => l.code === language);
 
   return (
     <div className="relative">
@@ -19,27 +19,35 @@ export function LanguageSwitcher() {
       >
         <Globe className="w-4 h-4 text-gray-300" />
         <span className="text-sm font-medium text-white">
-          {currentLang?.flag} {currentLang?.name}
+          {currentLang?.name}
         </span>
-        <ChevronDown className={`w-4 h-4 text-gray-300 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown
+          className={`w-4 h-4 text-gray-300 transition-transform ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </button>
 
       {isOpen && (
         <>
-          <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-          <div className="absolute right-0 top-full mt-2 w-48 bg-[#2d2d2f] border border-white/10 rounded-lg shadow-xl z-50 overflow-hidden">
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setIsOpen(false)}
+          />
+          <div className="absolute right-0 top-full mt-2 w-36 bg-[#2d2d2f] border border-white/10 rounded-lg shadow-xl z-50 overflow-hidden">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => {
-                  setLanguage(lang.code as Language)
-                  setIsOpen(false)
+                  setLanguage(lang.code as Language);
+                  setIsOpen(false);
                 }}
                 className={`cursor-pointer w-full px-4 py-2.5 text-left text-sm flex items-center gap-3 hover:bg-white/10 transition-colors ${
-                  language === lang.code ? "bg-[#e91e7d]/20 text-[#e91e7d] font-medium" : "text-gray-300"
+                  language === lang.code
+                    ? "bg-[#e91e7d]/20 text-[#e91e7d] font-medium"
+                    : "text-gray-300"
                 }`}
               >
-                <span className="text-lg">{lang.flag}</span>
                 <span>{lang.name}</span>
               </button>
             ))}
@@ -47,5 +55,5 @@ export function LanguageSwitcher() {
         </>
       )}
     </div>
-  )
+  );
 }
