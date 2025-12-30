@@ -61,9 +61,10 @@ export function Header() {
 
           {/* Right Section */}
           <div className="flex items-center gap-4">
+            {/* 1. Phone Number - appears first (at xl - 1280px) */}
             <a
               href="tel:+49621860373150"
-              className="hidden md:flex items-center gap-2 text-sm text-white/70 transition-colors relative group"
+              className="hidden xl:flex items-center gap-2 text-sm text-white/70 transition-colors relative group"
             >
               <Phone className="w-4 h-4" />
               <span className="relative">
@@ -72,21 +73,10 @@ export function Header() {
               </span>
             </a>
 
-            <LanguageSwitcher />
-
-            <a
-              href="https://booking.softtec.software/workandsleep"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
-            >
-              {t("bookNow")}
-            </a>
-
-            {/* Mobile Menu Button - white icon */}
+            {/* 2. Mobile Menu Button - left of language switcher when both visible */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
+              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors text-white border"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -94,18 +84,27 @@ export function Header() {
                 <Menu className="w-6 h-6" />
               )}
             </button>
+
+            {/* 3. Language Switcher - appears at sm */}
+            <div className="hidden sm:block">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
 
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-white/10">
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2 items-start">
+              {/* Language Switcher - only show in mobile menu when screen < sm */}
+              <div className="py-3 ml-auto sm:hidden">
+                <LanguageSwitcher />
+              </div>
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/5 rounded-lg transition-colors relative group inline-block"
+                  className="mr-4 px-4 py-3 text-sm font-medium text-white/80 border hover:bg-white/5 rounded-lg transition-colors relative group inline-block"
                 >
                   <span className="relative">
                     {link.label}
@@ -113,14 +112,6 @@ export function Header() {
                   </span>
                 </a>
               ))}
-              <a
-                href="https://booking.softtec.software/workandsleep"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mx-4 mt-2 inline-flex items-center justify-center px-5 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                {t("bookNow")}
-              </a>
             </nav>
           </div>
         )}
