@@ -21,9 +21,9 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { href: "#rooms", label: t("rooms") },
-    { href: "#amenities", label: t("amenities") },
-    { href: "#location", label: t("directions") },
+    { href: "/#rooms", label: t("rooms") },
+    { href: "/#amenities", label: t("amenities") },
+    { href: "/#location", label: t("directions") },
   ];
 
   return (
