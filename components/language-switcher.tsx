@@ -34,7 +34,7 @@ export function LanguageSwitcher() {
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-full mt-2 w-36 bg-[#2d2d2f] border border-white/10 rounded-lg shadow-xl z-50 overflow-hidden">
+          <div className="absolute right-0 top-full mt-2 w-36 max-h-[210px] bg-[#2d2d2f] border border-white/10 rounded-lg shadow-xl z-50 overflow-y-auto overflow-x-hidden">
             {languages.map((lang) => (
               <button
                 key={lang.code}
@@ -42,7 +42,7 @@ export function LanguageSwitcher() {
                   setLanguage(lang.code as Language);
                   setIsOpen(false);
                 }}
-                className={`cursor-pointer w-full px-4 py-2.5 text-left text-sm flex items-center gap-3 hover:bg-white/10 transition-colors ${
+                className={`cursor-pointer w-full px-4 py-2.5 text-center text-sm flex items-center gap-3 hover:bg-white/10 transition-colors ${
                   language === lang.code
                     ? "bg-[#e91e7d]/20 text-[#e91e7d] font-medium"
                     : "text-gray-300"

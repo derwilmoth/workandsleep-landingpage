@@ -73,7 +73,12 @@ export function Header() {
               </span>
             </a>
 
-            {/* 2. Mobile Menu Button - left of language switcher when both visible */}
+            {/* 2. Language Switcher - appears at sm */}
+            <div className="hidden sm:block">
+              <LanguageSwitcher />
+            </div>
+
+            {/* 3. Mobile Menu Button - right of language switcher when both visible */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors text-white border"
@@ -84,27 +89,18 @@ export function Header() {
                 <Menu className="w-6 h-6" />
               )}
             </button>
-
-            {/* 3. Language Switcher - appears at sm */}
-            <div className="hidden sm:block">
-              <LanguageSwitcher />
-            </div>
           </div>
         </div>
 
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-white/10">
             <nav className="flex flex-col gap-2 items-start">
-              {/* Language Switcher - only show in mobile menu when screen < sm */}
-              <div className="py-3 ml-auto sm:hidden">
-                <LanguageSwitcher />
-              </div>
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mr-4 px-4 py-3 text-sm font-medium text-white/80 border hover:bg-white/5 rounded-lg transition-colors relative group inline-block"
+                  className="mr-4 px-4 py-3 text-sm font-medium text-white/80 border hover:bg-white/5 rounded-lg transition-colors relative group inline-block w-full text-center"
                 >
                   <span className="relative">
                     {link.label}
@@ -112,6 +108,11 @@ export function Header() {
                   </span>
                 </a>
               ))}
+
+              {/* Language Switcher - only show in mobile menu when screen < sm */}
+              <div className="py-3 ml-auto sm:hidden">
+                <LanguageSwitcher />
+              </div>
             </nav>
           </div>
         )}
