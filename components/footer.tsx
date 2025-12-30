@@ -28,7 +28,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Copyright */}
             <p className="text-sm text-gray-400">
-              © Work&Sleep Boardinghouse Mannheim
+              © Work & Sleep Boardinghouse
             </p>
 
             {/* Legal Links - underline animation on hover */}
