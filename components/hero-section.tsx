@@ -15,9 +15,10 @@ export function HeroSection() {
           src="/images/2.jpg"
           alt="Work & Sleep Boardinghouse Building"
           fill
-          className="object-cover"
+          className="object-cover animate-[zoomIn_5s_ease-out_forwards]"
           priority
           quality={100}
+          style={{ transform: "scale(1.15)" }}
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/70" />
