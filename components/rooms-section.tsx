@@ -102,7 +102,7 @@ export function RoomsSection() {
         </div>
 
         <div className="mt-16 p-8 bg-white rounded-2xl shadow-lg border border-gray-200">
-          <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center gap-6 justify-between text-center md:text-left">
             <div className="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
               <Check className="w-8 h-8 text-primary" />
             </div>
