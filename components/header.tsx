@@ -12,12 +12,17 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isLanguageSelectorOpen, setIsLanguageSelectorOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 10) {
+      if (
+        currentScrollY > lastScrollY &&
+        currentScrollY > 10 &&
+        !isLanguageSelectorOpen
+      ) {
         // Scrolling down & past threshold
         setIsVisible(false);
       } else {
@@ -30,7 +35,7 @@ export function Header() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isLanguageSelectorOpen]);
 
   const navLinks = [
     { href: "/#rooms", label: t("rooms") },
@@ -87,7 +92,7 @@ export function Header() {
 
             {/* 2. Language Switcher - appears at sm */}
             <div className="hidden sm:block">
-              <LanguageSwitcher />
+              <LanguageSwitcher onOpenChange={setIsLanguageSelectorOpen} />
             </div>
 
             {/* 3. Mobile Menu Button - right of language switcher when both visible */}
@@ -123,7 +128,7 @@ export function Header() {
 
               {/* Language Switcher - only show in mobile menu when screen < sm */}
               <div className="py-3 ml-auto sm:hidden">
-                <LanguageSwitcher />
+                <LanguageSwitcher onOpenChange={setIsLanguageSelectorOpen} />
               </div>
             </nav>
           </div>
