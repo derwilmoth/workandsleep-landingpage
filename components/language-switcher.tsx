@@ -51,7 +51,7 @@ export function LanguageSwitcher({ onOpenChange }: LanguageSwitcherProps) {
             }}
             className={`cursor-pointer w-full px-4 py-2.5 text-sm flex items-center justify-center hover:bg-white/20 transition-colors ${
               language === lang.code
-                ? "bg-[#950a46]/40 text-white font-medium"
+                ? "bg-[#950a46]/40 text-gray-300 font-medium"
                 : "text-gray-300"
             }`}
           >
@@ -70,7 +70,7 @@ export function LanguageSwitcher({ onOpenChange }: LanguageSwitcherProps) {
         className="cursor-pointer flex items-center gap-2 px-3 py-2 rounded-lg bg-transparent border border-white/20 hover:bg-white/20 transition-colors"
       >
         <Globe className="w-4 h-4 text-gray-300" />
-        <span className="text-sm font-medium text-white">
+        <span className="text-sm font-medium text-gray-300">
           {currentLang?.name}
         </span>
         <ChevronDown
