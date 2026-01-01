@@ -8,16 +8,33 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#2d2d2f] pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Background Image with Dark Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/2.jpg"
+          alt="Work & Sleep Boardinghouse Building"
+          fill
+          className="object-cover"
+          priority
+          quality={100}
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/70" />
+
+        {/* Gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+      </div>
+
       {/* Content - Centered both horizontally and vertically */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-10 sm:mb-12 relative">
           <Image
             src="/images/logo-boardinghouse-work-sleep-1-1-e1766177408442.png"
             alt="Work & Sleep Boardinghouse Logo"
             width={700}
             height={350}
-            className="mx-auto logo-glow w-[500px] sm:w-[600px] md:w-[700px] lg:w-[1000px] h-auto"
+            className="relative mx-auto w-[500px] sm:w-[600px] md:w-[700px] lg:w-[1000px] h-auto drop-shadow-[0_0_40px_rgba(149,10,70,0.25)]"
             priority
           />
         </div>
@@ -31,17 +48,17 @@ export function HeroSection() {
             href="https://booking.softtec.software/workandsleep"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white bg-[#950a46] rounded-xl shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden"
+            className="cursor-pointer group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white bg-[#950a46] rounded-xl shadow-2xl shadow-[#950a46]/30 hover:scale-105 transition-all duration-300 overflow-hidden"
           >
             <span className="relative z-10">{t("bookNow")}</span>
           </a>
 
-          <div className="inline-flex items-center gap-3 px-4 py-2.5 sm:px-5 sm:py-3 bg-[#39393b] rounded-xl border border-white/10 shadow-lg">
+          <div className="inline-flex items-center gap-3 px-4 py-2.5 sm:px-5 sm:py-3 bg-black/40 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
             <div className="text-left">
               <p className="font-semibold text-white text-xs sm:text-sm">
                 {t("payOnArrival")}
               </p>
-              <p className="text-xs text-gray-400">{t("payOnArrivalShort")}</p>
+              <p className="text-xs text-gray-300">{t("payOnArrivalShort")}</p>
             </div>
           </div>
         </div>

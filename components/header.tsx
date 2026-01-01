@@ -40,12 +40,12 @@ export function Header() {
 
   return (
     <header
-      className={`fixed w-10/12 top-3 left-1/12 z-50 transition-all duration-300 bg-[#2d2d2f] border rounded-2xl shadow-lg ${
+      className={`fixed w-10/12 top-3 left-1/12 z-50 transition-all duration-300 bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg ${
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-32 opacity-0"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-15.5">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -53,7 +53,7 @@ export function Header() {
               alt="Work & Sleep Boardinghouse"
               width={40}
               height={40}
-              className="h-[35px] w-auto"
+              className="h-[30px] w-auto"
               priority
             />
           </Link>
@@ -93,7 +93,7 @@ export function Header() {
             {/* 3. Mobile Menu Button - right of language switcher when both visible */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors text-white border"
+              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors text-white border border-white/10"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -112,7 +112,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mr-4 px-4 py-3 text-sm font-medium text-white/80 border hover:bg-white/5 rounded-lg transition-colors relative group inline-block w-full text-center"
+                  className="mr-4 px-4 py-3 text-sm font-medium text-white/80 border border-white/10 hover:bg-white/5 rounded-lg transition-colors relative group inline-block w-full text-center"
                 >
                   <span className="relative">
                     {link.label}

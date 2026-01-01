@@ -30,7 +30,6 @@ const carouselImages = [
   { src: "/images/garden-201.jpeg", alt: "Terrasse Außenbereich" },
   { src: "/images/bad-201.jpeg", alt: "Badezimmer" },
   { src: "/images/bad-2.jpeg", alt: "Dusche", position: "top" },
-  { src: "/images/2.jpg", alt: "Hotel Frontansicht" },
   { src: "/images/geimeinschaftsl.jpeg", alt: "Gemeinschaftsraum" },
 ];
 
@@ -101,8 +100,8 @@ export function AmenitiesSection() {
   const duplicatedImages = [...carouselImages, ...carouselImages];
 
   return (
-    <section 
-      id="amenities" 
+    <section
+      id="amenities"
       ref={sectionRef}
       className="pb-24 bg-gray-100 scroll-mt-12"
     >
