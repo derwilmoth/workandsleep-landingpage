@@ -10,15 +10,27 @@ import Link from "next/link";
 export function Header() {
   const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 10) {
+        // Scrolling down & past threshold
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const navLinks = [
     { href: "/#rooms", label: t("rooms") },
@@ -28,8 +40,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed w-10/12 top-3 left-1/12 z-50 transition-all duration-300 bg-[#2d2d2f] border rounded-2xl ${
-        isScrolled ? "shadow-lg" : ""
+      className={`fixed w-10/12 top-3 left-1/12 z-50 transition-all duration-300 bg-[#2d2d2f] border rounded-2xl shadow-lg ${
+        isVisible ? "translate-y-0 opacity-100" : "-translate-y-32 opacity-0"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
