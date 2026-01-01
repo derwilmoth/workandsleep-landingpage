@@ -28,7 +28,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#2d2d2f] ${
+      className={`fixed w-10/12 top-3 left-1/12 z-50 transition-all duration-300 bg-[#2d2d2f] border rounded-2xl ${
         isScrolled ? "shadow-lg" : ""
       }`}
     >
