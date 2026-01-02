@@ -73,17 +73,12 @@ export function RoomsSection() {
                   {t(room.nameKey)}
                 </h3>
 
-                {room.beds > 1 ? (
-                  <p className="text-sm text-gray-600 mb-4 flex items-center gap-2">
-                    <Bed className="w-4 h-4" />
-                    {room.beds} {t("separateBeds")}
-                  </p>
-                ) : (
-                  <p className="text-sm text-gray-600 mb-4 flex items-center gap-2">
-                    <Bed className="w-4 h-4" />
-                    {room.beds}
-                  </p>
-                )}
+                <p className="text-sm text-gray-600 mb-4 flex items-center gap-2">
+                  <Bed className="w-4 h-4" />
+                  {`${room.beds} ${
+                    room.beds === 1 ? t("bed") : t("separateBeds")
+                  }`}
+                </p>
 
                 {/* Price */}
                 <div className="flex items-baseline gap-1 mb-4">
