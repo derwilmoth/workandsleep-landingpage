@@ -79,7 +79,7 @@ export function CheckinSection() {
           </div>
         </div>
 
-        <p className="mt-8 text-center text-sm text-white font-bold">
+        <p className="mt-8 text-center text-sm text-gray-400 font-semibold">
           {t("noBreakfast")}
         </p>
 
