@@ -115,7 +115,7 @@ export function LocationSection() {
               href="https://booking.softtec.software/workandsleep"
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer mt-4 inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 text-lg"
+              className="cursor-pointer mt-4 inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors text-lg"
             >
               {t("bookNow")}
             </a>

@@ -123,6 +123,10 @@ export const translations: Record<Language, Record<string, string>> = {
     legalNoticeTitle: "Impressum",
     privacyTitle: "Datenschutzerklärung",
     termsTitle: "Allgemeine Geschäftsbedingungen",
+
+    // Cookie Banner
+    cookieBannerMessage: "Diese Webseite und unser Online-Buchungssystem verwenden Cookies und lokale Speicherung, um Ihre Spracheinstellungen zu speichern und ein optimales Buchungserlebnis zu gewährleisten. Mit der Nutzung stimmen Sie unserer Cookie-Verwendung zu.",
+    cookieBannerAccept: "Alle akzeptieren",
   },
   en: {
     bookNow: "Book Now",
@@ -208,6 +212,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Terms & Conditions",
     noBreakfast: "Please note: Breakfast is not available.",
     imprint: "Imprint",
+
+    // Cookie Banner
+    cookieBannerMessage: "This website and our online booking system use cookies and local storage to save your language preferences and ensure an optimal booking experience. By using, you consent to our use of cookies.",
+    cookieBannerAccept: "Accept all",
   },
   tr: {
     bookNow: "Şimdi Rezervasyon Yap",
@@ -293,6 +301,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Şartlar ve Koşullar",
     noBreakfast: "Lütfen dikkat: Kahvaltı mevcut değildir.",
     imprint: "Künye",
+
+    // Cookie Banner
+    cookieBannerMessage: "Bu web sitesi ve çevrimiçi rezervasyon sistemimiz, dil tercihlerinizi kaydetmek ve en iyi rezervasyon deneyimini sağlamak için çerezler ve yerel depolama kullanır. Kullanarak çerez kullanımımızı kabul etmiş olursunuz.",
+    cookieBannerAccept: "Tümünü kabul et",
   },
   fr: {
     bookNow: "Réserver",
@@ -380,6 +392,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Conditions Générales",
     noBreakfast: "Veuillez noter: Le petit-déjeuner n'est pas disponible.",
     imprint: "Mentions Légales",
+
+    // Cookie Banner
+    cookieBannerMessage: "Ce site web et notre système de réservation en ligne utilisent des cookies et le stockage local pour enregistrer vos préférences linguistiques et garantir une expérience de réservation optimale. En utilisant, vous consentez à notre utilisation des cookies.",
+    cookieBannerAccept: "Tout accepter",
   },
   es: {
     bookNow: "Reservar Ahora",
@@ -467,6 +483,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Términos y Condiciones",
     noBreakfast: "Por favor tenga en cuenta: El desayuno no está disponible.",
     imprint: "Aviso Legal",
+
+    // Cookie Banner
+    cookieBannerMessage: "Este sitio web y nuestro sistema de reservas en línea utilizan cookies y almacenamiento local para guardar sus preferencias de idioma y garantizar una experiencia de reserva óptima. Al utilizar, acepta el uso de cookies.",
+    cookieBannerAccept: "Aceptar todo",
   },
   it: {
     bookNow: "Prenota Ora",
@@ -554,6 +574,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Termini e Condizioni",
     noBreakfast: "Si prega di notare: La colazione non è disponibile.",
     imprint: "Note Legali",
+
+    // Cookie Banner
+    cookieBannerMessage: "Questo sito web e il nostro sistema di prenotazione online utilizzano cookie e archiviazione locale per salvare le tue preferenze linguistiche e garantire un'esperienza di prenotazione ottimale. Utilizzando, acconsenti all'uso dei cookie.",
+    cookieBannerAccept: "Accetta tutto",
   },
   nl: {
     bookNow: "Nu Boeken",
@@ -640,6 +664,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Algemene Voorwaarden",
     noBreakfast: "Let op: Ontbijt is niet beschikbaar.",
     imprint: "Colofon",
+
+    // Cookie Banner
+    cookieBannerMessage: "Deze website en ons online boekingssysteem gebruiken cookies en lokale opslag om uw taalvoorkeuren op te slaan en een optimale boekingservaring te garanderen. Door te gebruiken, stemt u in met ons gebruik van cookies.",
+    cookieBannerAccept: "Alles accepteren",
   },
   ru: {
     bookNow: "Забронировать",
@@ -726,6 +754,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Условия и Положения",
     noBreakfast: "Обратите внимание: завтрак недоступен.",
     imprint: "Выходные данные",
+
+    // Cookie Banner
+    cookieBannerMessage: "Этот веб-сайт и наша система онлайн-бронирования используют файлы cookie и локальное хранилище для сохранения ваших языковых предпочтений и обеспечения оптимального опыта бронирования. Используя, вы соглашаетесь с использованием файлов cookie.",
+    cookieBannerAccept: "Принять все",
   },
   pl: {
     bookNow: "Zarezerwuj Teraz",
@@ -811,6 +843,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Regulamin",
     noBreakfast: "Uwaga: śniadanie nie jest dostępne.",
     imprint: "Impressum",
+
+    // Cookie Banner
+    cookieBannerMessage: "Ta strona internetowa i nasz system rezerwacji online używają plików cookie i lokalnej pamięci do zapisywania preferencji językowych i zapewnienia optymalnego doświadczenia rezerwacji. Korzystając, zgadzasz się na używanie plików cookie.",
+    cookieBannerAccept: "Zaakceptuj wszystko",
   },
   ro: {
     bookNow: "Rezervă Acum",
@@ -898,6 +934,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "Termeni și Condiții",
     noBreakfast: "Vă rugăm să rețineți: Micul dejun nu este disponibil.",
     imprint: "Aviz Legal",
+
+    // Cookie Banner
+    cookieBannerMessage: "Acest site web și sistemul nostru de rezervare online folosesc cookie-uri și stocare locală pentru a salva preferințele dvs. lingvistice și pentru a asigura o experiență optimă de rezervare. Utilizând, sunteți de acord cu utilizarea cookie-urilor.",
+    cookieBannerAccept: "Acceptă tot",
   },
   zh: {
     bookNow: "立即预订",
@@ -982,6 +1022,10 @@ export const translations: Record<Language, Record<string, string>> = {
     termsTitle: "条款和条件",
     noBreakfast: "请注意：不提供早餐。",
     imprint: "版本说明",
+
+    // Cookie Banner
+    cookieBannerMessage: "本网站和我们的在线预订系统使用Cookie和本地存储来保存您的语言偏好并确保最佳预订体验。使用即表示您同意我们使用Cookie。",
+    cookieBannerAccept: "全部接受",
   },
 }
 

@@ -49,7 +49,7 @@ export function HeroSection() {
             href="https://booking.softtec.software/workandsleep"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white bg-[#950a46] rounded-xl shadow-2xl shadow-[#950a46]/30 hover:scale-105 transition-all duration-300 overflow-hidden"
+            className="cursor-pointer group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white bg-[#950a46] rounded-xl shadow-2xl shadow-[#950a46]/30 hover:bg-primary/90 transition-all duration-300 overflow-hidden"
           >
             <span className="relative z-10">{t("bookNow")}</span>
           </a>

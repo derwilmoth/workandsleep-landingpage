@@ -31,7 +31,7 @@ export function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="cursor-pointer fixed bottom-6 right-6 z-50 p-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 hover:scale-110"
+      className="cursor-pointer fixed bottom-6 right-6 z-50 p-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300"
       aria-label="Nach oben scrollen"
     >
       <ArrowUp className="w-6 h-6" />

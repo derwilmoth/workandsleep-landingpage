@@ -1,18 +1,19 @@
-import type React from "react"
-import type { Metadata, Viewport } from "next"
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import type React from "react";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-const _playfairDisplay = Playfair_Display({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const _playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Work & Sleep Boardinghouse Mannheim | Günstige Übernachtung",
   description:
     "Komfortables Boardinghouse in Mannheim. Faire Festpreise ab 49€/Nacht. Kostenloses WLAN, Parkplätze & beste Anbindung. Perfekt für Geschäftsreisende.",
-  keywords: "Hotel Mannheim, Boardinghouse, günstige Übernachtung, Geschäftsreise, Work and Sleep",
+  keywords:
+    "Hotel Mannheim, Boardinghouse, günstige Übernachtung, Geschäftsreise, Work and Sleep",
   generator: "v0.app",
   icons: {
     icon: [
@@ -33,22 +34,23 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Work & Sleep Boardinghouse Mannheim",
-    description: "Komfortables Boardinghouse in Mannheim. Faire Festpreise ab 49€/Nacht.",
+    description:
+      "Komfortables Boardinghouse in Mannheim. Faire Festpreise ab 49€/Nacht.",
     type: "website",
     locale: "de_DE",
   },
-}
+};
 
 export const viewport: Viewport = {
   themeColor: "#8B1A4A",
   width: "device-width",
   initialScale: 1,
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="de">
@@ -57,5 +59,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
