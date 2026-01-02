@@ -58,7 +58,7 @@ export function RoomsSection() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent" />
+                {/*<div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent" />*/}
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">
                   <div className="flex items-center gap-1 px-3 py-1.5 bg-primary/90 text-white rounded-full text-sm font-medium">
                     <Users className="w-4 h-4" />
@@ -73,10 +73,15 @@ export function RoomsSection() {
                   {t(room.nameKey)}
                 </h3>
 
-                {room.beds > 1 && (
+                {room.beds > 1 ? (
                   <p className="text-sm text-gray-600 mb-4 flex items-center gap-2">
                     <Bed className="w-4 h-4" />
                     {room.beds} {t("separateBeds")}
+                  </p>
+                ) : (
+                  <p className="text-sm text-gray-600 mb-4 flex items-center gap-2">
+                    <Bed className="w-4 h-4" />
+                    {room.beds}
                   </p>
                 )}
 

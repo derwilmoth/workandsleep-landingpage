@@ -7,17 +7,23 @@ export function CheckinSection() {
   const { t } = useLanguage();
 
   const infoItems = [
-    { icon: Clock, titleKey: "receptionHours", descKey: "receptionHoursDesc" },
+    {
+      icon: Clock,
+      titleKey: "receptionHours",
+      descKey: "receptionHoursDesc",
+      highlight: false,
+    },
     {
       icon: CalendarCheck,
       titleKey: "checkInTime",
       descKey: "checkInTimeDesc",
-      highlight: true,
+      highlight: false,
     },
     {
       icon: AlertTriangle,
       titleKey: "holidayNote",
       descKey: "holidayNoteDesc",
+      highlight: false,
     },
   ];
 
@@ -51,7 +57,7 @@ export function CheckinSection() {
           ))}
         </div>
 
-        <div className="p-8 bg-[#39393b] rounded-2xl shadow-lg border border-white/10">
+        <div className="p-8 bg-[#39393b] rounded-2xl shadow-lg border">
           <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
             <div className="flex-shrink-0 w-16 h-16 bg-[#2d2d2e] border rounded-full flex items-center justify-center">
               <Briefcase className="w-8 h-8 text-white" />
@@ -73,7 +79,7 @@ export function CheckinSection() {
           </div>
         </div>
 
-        <p className="mt-8 text-center text-sm text-gray-400">
+        <p className="mt-8 text-center text-sm text-white font-bold">
           {t("noBreakfast")}
         </p>
 
