@@ -87,7 +87,7 @@ export function LocationSection() {
                   {t("phone")}
                 </h3>
                 <a
-                  href="tel:+49621860373150"
+                  href="tel:+4962186037315"
                   className="cursor-pointer text-primary hover:underline font-medium"
                 >
                   +49 621 86037315

@@ -80,7 +80,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             {/* 1. Phone Number - appears first (at xl - 1280px) */}
             <a
-              href="tel:+49621860373150"
+              href="tel:+4962186037315"
               className="hidden xl:flex items-center gap-2 text-sm text-white/70 transition-colors relative group"
             >
               <Phone className="w-4 h-4" />
